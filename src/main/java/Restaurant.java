@@ -68,6 +68,14 @@ public class Restaurant {
         return name;
     }
 
-
+    public double totalOrderValue(List<String> itemNames){
+        double totalAmount = 0.0;
+        for(Item item: menu) {
+            for(int i=0;i<itemNames.size();i++){
+                if(item.getName().equals(itemNames.get(i)))
+                    totalAmount=totalAmount+item.getPrice() ;
+            }
+        }return totalAmount;
+    }
 
 }
